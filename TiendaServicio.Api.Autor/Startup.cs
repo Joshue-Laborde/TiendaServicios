@@ -1,10 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System.Reflection;
-using TiendaServicios.Api.Autor.Persistencia;
-using MediatR;
-using TiendaServicios.Api.Autor.Aplicacion;
+﻿using MediatR;
+using Microsoft.EntityFrameworkCore;
+using TiendaServicio.Api.Autor.Aplicacion;
+using TiendaServicio.Api.Autor.Persistencia;
 
-namespace TiendaServicios.Api.Autor
+namespace TiendaServicio.Api.Autor
 {
     public class Startup
     {
@@ -24,8 +23,6 @@ namespace TiendaServicios.Api.Autor
 
             services.AddEndpointsApiExplorer();
             services.AddMediatR(typeof(Nuevo.Manejador).Assembly);
-            //services.AddMediatR(Assembly.GetExecutingAssembly());
-            //services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILogger<Startup> logger)
@@ -49,6 +46,5 @@ namespace TiendaServicios.Api.Autor
                 endpoint.MapControllers();
             });
         }
-
     }
 }

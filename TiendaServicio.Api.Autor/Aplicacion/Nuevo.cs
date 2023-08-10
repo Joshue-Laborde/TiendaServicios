@@ -1,9 +1,8 @@
 ﻿using MediatR;
-using System.Globalization;
-using TiendaServicios.Api.Autor.Modelo;
-using TiendaServicios.Api.Autor.Persistencia;
+using TiendaServicio.Api.Autor.Modelo;
+using TiendaServicio.Api.Autor.Persistencia;
 
-namespace TiendaServicios.Api.Autor.Aplicacion
+namespace TiendaServicio.Api.Autor.Aplicacion
 {
     public class Nuevo
     {
@@ -33,7 +32,7 @@ namespace TiendaServicios.Api.Autor.Aplicacion
                 _contexto.AutorLibro.Add(autorLibro);
                 var valor = await _contexto.SaveChangesAsync();
 
-                if(valor > 0)
+                if (valor > 0)
                 {
                     return Unit.Value;
                 }
